@@ -11,5 +11,4 @@ public class ImsManufacturingDeptApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ImsManufacturingDeptApplication.class, args);
 	}
-
 }

@@ -4,10 +4,12 @@ import java.util.Optional;
 
 import javax.transaction.Transactional;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cts.imsproj.manufacture.DAO.ProductRepository;
+import com.cts.imsproj.manufacture.dao.ProductRepository;
+import com.cts.imsproj.manufacture.dto.ProductDto;
 import com.cts.imsproj.manufacture.entity.Product;
 
 @Transactional
@@ -17,8 +19,10 @@ public class ProductService {
     @Autowired
     public ProductRepository productRepository;
 
-    public void insert(Product product) {
-        productRepository.save(product);
+    public void insert(ProductDto product) {
+    	Product entity = new Product();
+    	BeanUtils.copyProperties(product, entity);
+        productRepository.save(entity);
     }
 
     public Optional<Product> find(int id) {
@@ -29,8 +33,10 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    public void updateProduct(Product product) {
-        productRepository.save(product);
+    public void updateProduct(ProductDto product) {
+    	Product entity = new Product();
+    	BeanUtils.copyProperties(product, entity);
+        productRepository.save(entity);
     }
 
     public void deleteProduct(int id) {

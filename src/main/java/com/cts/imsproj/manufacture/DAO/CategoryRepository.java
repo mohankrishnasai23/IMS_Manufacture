@@ -1,4 +1,4 @@
-package com.cts.imsproj.manufacture.DAO;
+package com.cts.imsproj.manufacture.dao;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
