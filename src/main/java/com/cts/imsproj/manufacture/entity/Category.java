@@ -54,19 +54,4 @@ public class Category implements Serializable {
 	public void setProducts(List<Product> products) {
 		this.products = products;
 	}
-
-	public Product addProduct(Product product) {
-		getProducts().add(product);
-		product.setCategory(this);
-
-		return product;
-	}
-
-	public Product removeProduct(Product product) {
-		getProducts().remove(product);
-		product.setCategory(null);
-
-		return product;
-	}
-
 }
